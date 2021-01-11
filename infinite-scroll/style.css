@@ -43,6 +43,11 @@ h1 {
   margin-top: 5px;
 }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 600px) {
   .image-container {
     margin: 10px;

@@ -1,5 +1,6 @@
 const imageContainer = document.getElementById("image-container");
 const loader = document.getElementById("loader");
+const body = document.getElementById("body");
 
 let ready = false;
 let imagesLoaded = 0;
@@ -18,6 +19,7 @@ function imageLoaded() {
   if (imagesLoaded === totalImages) {
     ready = true;
     loader.hidden = true;
+    body.classList.toggle("stop-scrolling");
   }
 }
 
@@ -31,6 +33,9 @@ function setAttributes(element, attributes) {
 // Create Elements For Links & Photos, Add to DOM
 function displayPhotos() {
   imagesLoaded = 0;
+  loader.hidden = false;
+  body.classList.toggle("stop-scrolling");
+
   totalImages = photosArray.length;
   // Run function for each object in photosArray
   photosArray.forEach((photo) => {
